@@ -45,7 +45,7 @@ export default function DocsViewer({ docs }: DocsViewerProps) {
       </nav>
 
       {/* panel area */}
-      <div aria-label="Documentation content" className="prose flex-1 max-w-none p-8 overflow-auto max-h-screen">
+      <div aria-label="Documentation content" className="prose flex-1 max-w-none p-8 overflow-auto max-h-screen bg-black">
         <article>
           <h2 className="text-2xl font-bold mb-4">{docs[selected].name.replace(/\.md$/, "")}</h2>
           <ReactMarkdown>{docs[selected].content}</ReactMarkdown>
