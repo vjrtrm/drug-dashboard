@@ -11,5 +11,16 @@ services:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+  ollama:
+    image: ollama/ollama:latest
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    # To pull a model on first run:
+    #   docker compose exec ollama ollama pull llama3
+
 volumes:
   postgres_data:
+  ollama_data:
